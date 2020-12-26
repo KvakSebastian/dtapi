@@ -5,6 +5,12 @@ language: node_js
 node_js:
   - 12
 
+env:
+  global:
+    - DBUS_SESSION_BUS_ADDRESS=/dev/null
+    - DISPLAY=:99.0
+    - CHROME_BIN=chromium-browser
+    
 before_deploy:
   - npm run --prod build
   - echo -e "node_modules\npackage-lock.json" > .gitignore
