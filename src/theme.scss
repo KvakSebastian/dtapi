@@ -1,0 +1,96 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$custom-primary: mat-palette($mat-indigo);
+$custom-accent: mat-palette($mat-pink, A200, A100, A400);
+$custom-warn: mat-palette($mat-red);
+
+$custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+@include angular-material-theme($custom-theme);
+
+$dark-primary: mat-palette($mat-pink, 500);
+$dark-accent: mat-palette($mat-blue-grey, 500, 600, 700);
+$dark-warn: mat-palette($mat-red, 500);
+
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+}
+.mat-list-item.active-link {
+    background-color: #3f51b5 !important;
+    color: white;
+    font-weight: 500;
+}
+.mat-list-item.active-link:focus {
+    background-color: #3f51b5 !important;
+    color: white;
+    font-weight: 500;
+}
+.mat-list-item.active-link:hover {
+    background-color: #3f51b5 !important;
+    color: white;
+    font-weight: 500;
+}
+.mat-list-item.active-link:active {
+    background-color: #3f51b5 !important;
+    color: white;
+    font-weight: 500;
+}
+.mat-nav-list .mat-list-item:hover {
+    background-color: #3f51b5ab !important;
+    color: white;
+}
+.mat-list-item.active-link:hover {
+    background-color: #3f51b5 !important;
+    color: white;
+}
+
+.dark-theme .mat-nav-list .active-link {
+    background-color: #e91e63 !important;
+    font-weight: 500;
+}
+.dark-theme .mat-nav-list .active-link:focus {
+    background-color: #e91e63 !important;
+    font-weight: 500;
+}
+.dark-theme .mat-nav-list .active-link:hover {
+    background-color: #e91e63 !important;
+    font-weight: 500;
+}
+.dark-theme .mat-nav-list .active-link:active {
+    background-color: #e91e63 !important;
+    font-weight: 500;
+}
+.dark-theme .mat-nav-list .mat-list-item:hover {
+    background-color: #e91e629d !important;
+}
+.dark-theme .mat-nav-list .active-link:hover {
+    background-color: #e91e63 !important;
+}
+.dark-theme .empty-data {
+    mat-icon {
+        color: #212121;
+    }
+}
+.dark-theme .dark-theme-icon {
+    color: #212121 !important;
+}
+.dark-theme .icon-theme {
+    color: #e91e63 !important;
+}
+.dark-theme .dashboard-card-content:hover {
+    .dashboard-card-content__icon {
+        color: #e91e63 !important;
+    }
+}
+.dark-theme .timer-circle {
+    background: #e91e63 !important;
+}
+.dark-theme .dark-btn {
+    background: inherit !important;
+}
+.dark-theme .showRate {
+    background: #424242 !important;
+    border-bottom: 0.5px solid #595959 !important;
+}
