@@ -1,4 +1,9 @@
 
+dist: trusty
+sudo: false
+language: node_js
+  - "12"
+
 before_deploy:
   - npm run --prod build
   - echo -e "node_modules\npackage-lock.json" > .gitignore
