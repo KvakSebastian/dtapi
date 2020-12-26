@@ -1,0 +1,62 @@
+<form [formGroup]="form" (ngSubmit)="addGroup()">
+    <h1 mat-dialog-title>{{ title }}</h1>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Group name</mat-label>
+            <input matInput formControlName="group_name" />
+
+            <mat-error
+                class="validation"
+                *ngIf="
+                    form.get('group_name').invalid &&
+                    form.get('group_name').touched
+                "
+                >Це поле є обов'язковим</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Speciality name</mat-label>
+            <mat-select formControlName="speciality_name">
+                <mat-option
+                    *ngFor="let item of specialities"
+                    [value]="item.speciality_name"
+                    >{{ item.speciality_name }}</mat-option
+                >
+            </mat-select>
+            <mat-error
+                class="validation"
+                *ngIf="
+                    form.get('speciality_name').invalid &&
+                    form.get('speciality_name').touched
+                "
+                >Це поле є обов'язковим</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Faculty name</mat-label>
+            <mat-select formControlName="faculty_name">
+                <mat-option
+                    *ngFor="let item of faculties"
+                    [value]="item.faculty_name"
+                    >{{ item.faculty_name }}</mat-option
+                >
+            </mat-select>
+            <mat-error
+                class="validation"
+                *ngIf="
+                    form.get('faculty_name').invalid &&
+                    form.get('faculty_name').touched
+                "
+                >Це поле є обов'язковим</mat-error
+            >
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button type="button" (click)="onNoClick()">
+            Відмінити
+        </button>
+        <button mat-button type="submit" [disabled]="form.invalid">Ок</button>
+    </div>
+</form>

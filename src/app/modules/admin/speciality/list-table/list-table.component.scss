@@ -1,0 +1,61 @@
+table {
+    width: 100%;
+}
+
+.add-speciality-btn {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 119, 255);
+    border: none;
+    color: rgb(255, 255, 255);
+    &:hover {
+        background-color: rgb(46, 189, 255);
+        color: white;
+        cursor: pointer;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+input {
+    &.ng-invalid.ng-touched {
+        border: 1px solid red;
+    }
+    &.ng-valid {
+        border: 1px solid green;
+    }
+}
+small {
+    color: red;
+}
+
+.speciality-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.paginator {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    &:hover {
+        color: red;
+        cursor: pointer;
+    }
+}
+.entity-title {
+    display: flex;
+    align-items: center;
+    .mat-icon {
+        width: auto;
+        height: auto;
+    }
+    .speciality-title-icon {
+        font-size: 2rem;
+        margin-right: 0.5rem;
+    }
+}

@@ -1,0 +1,91 @@
+<div class="transfer" *ngIf="!loading; else loader">
+    <div class="transfer__header">
+        <h3 mat-dialog-title class="transfer__title">
+            <mat-icon class="header-icon">compare_arrows</mat-icon>
+            Переведення студента
+        </h3>
+    </div>
+
+    <mat-dialog-content class="transfer__content">
+        <div class="transfer__container">
+            <div class="transfer__faculty">
+                <div class="transfer__selector">
+                    <mat-form-field class="faculty">
+                        <mat-label>
+                            <mat-icon class="select-icon">school</mat-icon>
+                            Виберіть Факультат/Інститут
+                        </mat-label>
+                        <mat-select
+                            required
+                            placeholder="Факультет/Інститут"
+                            (selectionChange)="getGroups($event)"
+                        >
+                            <mat-option
+                                *ngFor="let faculty of faculties"
+                                [value]="faculty.faculty_id"
+                            >
+                                {{ faculty.faculty_name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="transfer__group">
+                <div class="transfer__selector">
+                    <mat-form-field class="faculty">
+                        <mat-label>
+                            <mat-icon class="select-icon">group</mat-icon>
+                            Виберіть Групу
+                        </mat-label>
+                        <mat-select
+                            [disabled]="
+                                faculties.length === 0 || !selectedFaculty
+                            "
+                            required
+                            placeholder="Група"
+                            (selectionChange)="getGroup($event)"
+                        >
+                            <mat-option
+                                *ngFor="let group of groups"
+                                [value]="group.group_id"
+                            >
+                                {{ group.group_name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="transfer__actions">
+        <div class="transfer__buttons">
+            <button
+                mat-flat-button
+                (click)="closeModal()"
+                type="reset"
+                mat-dialog-close
+                class="transfer__btn dark-btn"
+            >
+                Скасувати
+            </button>
+
+            <button
+                type="submit"
+                mat-flat-button
+                class="transfer__btn"
+                (click)="submit()"
+                [disabled]="!submitted"
+            >
+                Перевести
+            </button>
+        </div>
+    </mat-dialog-actions>
+</div>
+
+<ng-template #loader>
+    <mat-progress-spinner
+        mode="indeterminate"
+        color="primary"
+    ></mat-progress-spinner>
+</ng-template>
