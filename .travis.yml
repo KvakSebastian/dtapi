@@ -2,7 +2,8 @@
 dist: trusty
 sudo: false
 language: node_js
-  - "12"
+node_js:
+  - 12
 
 before_deploy:
   - npm run --prod build
