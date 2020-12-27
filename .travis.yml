@@ -8,7 +8,6 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng lint
-- ng build --prod 
 
 before_deploy:
   - npm run --prod build
