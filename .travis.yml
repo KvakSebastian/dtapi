@@ -1,18 +1,47 @@
+# dist: trusty
+# sudo: true
+# language: node_js
+# node_js:
+#   - 12
 
-dist: trusty
-sudo: false
+# before_script:
+#   - npm install -g @angular/cli
+
+# before_deploy:
+#   - npm run --prod build
+#   - echo -e "node_modules\npackage-lock.json" > .gitignore
+
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN
+#   keep-history: true
+#   on:
+#     branch: master
+
+
 language: node_js
 node_js:
   - 12
+sudo: true
 
-before_deploy:
-  - npm run --prod build
-  - echo -e "node_modules\npackage-lock.json" > .gitignore
+addons:
+  chrome: stable
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - npm build --prod    #base_href should be given in travis as an environment variable
 
 deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
+  skip_cleanup: true # To avoid cleanup of the artifact generated during script
+  github_token: $GITHUB_TOKEN # Provided as an environment variable in travis
+  local_dir: dist/dtaApi # Replace this with your project name
   on:
     branch: master
