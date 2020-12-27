@@ -36,8 +36,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - npm build --prod    #base_href should be given in travis as an environment variable
-  - mv dist/dtApi/index.html dist/dtApi/404.html
+  - ng build --prod --base-href https://kvaksebastian.github.io/dtapi/
 
 
 before_deploy:
