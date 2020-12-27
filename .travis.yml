@@ -40,7 +40,6 @@ script:
 
 
 before_deploy:
-  - ng build --prod
   - echo -e "node_modules\npackage-lock.json" > .gitignore
 
 deploy:
