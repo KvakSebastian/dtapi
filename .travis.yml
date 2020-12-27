@@ -36,7 +36,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - npm build --prod --base-href "https://KvakSebastian.github.io/" #base_href should be given in travis as an environment variable
+  - npm build --prod --base-href https://kvaksebastian.github.io/dtapi/ #base_href should be given in travis as an environment variable
 
 deploy:
   provider: pages
