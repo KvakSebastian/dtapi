@@ -37,6 +37,7 @@ before_script:
 
 script:
   - npm build --prod    #base_href should be given in travis as an environment variable
+  - mv dist/dtApi/index.html dist/dtApi/404.html
 
 
 before_deploy:
