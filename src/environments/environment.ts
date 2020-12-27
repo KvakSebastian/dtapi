@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    BASEURL: 'https://dtapi.if.ua/api/',
+    BASEURL: 'https://dtapi.if.ua:9000/api/',
     defaultImage:
         'https://jeffjbutler.com/wp-content/uploads/2018/01/default-user.png',
 };
