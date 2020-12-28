@@ -1,3 +1,25 @@
+# dist: trusty
+# sudo: true
+# language: node_js
+# node_js:
+#   - 12
+
+# before_script:
+#   - npm install -g @angular/cli
+
+# before_deploy:
+#   - npm run --prod build
+#   - echo -e "node_modules\npackage-lock.json" > .gitignore
+
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN
+#   keep-history: true
+#   on:
+#     branch: master
+
+
 language: node_js
 node_js:
   - 12
